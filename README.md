@@ -80,6 +80,43 @@ test/
 
 ---
 
+## User Login and Access Management Flow Test
+
+**Step 1: The user initiates a login**
+
+- The user opens the login page and enters their username and password.
+- Upon submitting the form, the system generates a token representing the login session attempt.
+
+**Step 2: Credential Validation**
+
+- The system compares the input credentials against its database.
+- **If credentials are correct:**
+  - The system marks the token as valid.
+  - It resets any previous count of failed login attempts.
+  - The user is redirected to the homepage and can access their account.
+- **If credentials are incorrect:**
+  - The system marks the token as invalid.
+  - It increments the user's invalid login attempt count by one.
+
+**Step 3: Continued Failed Attempts**
+
+- After each failed login, the system checks the number of failed attempts for the user.
+- **If the user has failed less than 5 times:**
+  - The user is informed that the login was invalid and is allowed to retry.
+- **If the user has failed 5 or more times:**
+  - The system blocks the account from further attempts.
+
+**Step 4: Temporary Lockout Period**
+
+- When an account is blocked, the timestamp of the last unsuccessful attempt is recorded.
+- A 15-minute timer starts from that moment.
+- **If the user tries to log in again within these 15 minutes:**
+  - A message is displayed: "Your account is temporarily locked. Please try again later."
+- **After 15 minutes:**
+  - The system automatically unblocks the user's account.
+
+---
+
 **Author:**
 - Jan Nickson Y. Altura
 
