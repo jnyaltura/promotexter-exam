@@ -1,0 +1,104 @@
+{
+  "info": {
+    "_postman_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "name": "Promotexter Exam API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Item",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Sample Item\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/items",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["items"]
+        }
+      }
+    },
+    {
+      "name": "Get All Items",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/items",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["items"]
+        }
+      }
+    },
+    {
+      "name": "Get Single Item",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/items/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["items", "1"]
+        }
+      }
+    },
+    {
+      "name": "Update Item",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Updated Item\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/items/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["items", "1"]
+        }
+      }
+    },
+    {
+      "name": "Delete Item",
+      "request": {
+        "method": "DELETE",
+        "url": {
+          "raw": "http://localhost:3000/items/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["items", "1"]
+        }
+      }
+    },
+    {
+      "name": "Phone Letter Combinations",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/phone-combinations?digits=23",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["phone-combinations"],
+          "query": [
+            { "key": "digits", "value": "23" }
+          ]
+        }
+      }
+    }
+  ]
+}
